@@ -14,14 +14,31 @@ BOOKS_DATABASE = [
 
 class Book:
     def __init__(self, id_, name, pages):
+        """
+        Создание и подготовка к работе экземпляра класса "Книга"
+
+        :id_: Идентификатор книги
+        :name: Название книги
+        :pages: Количество страниц в книге
+        """
         self.id = id_
         self.name = name
         self.pages = pages
 
     def __str__(self) -> str:
+        """
+        Магический метод __str__
+
+        return: Строковое представление объекта
+        """
         return f'Книга "{self.name}"'
 
     def __repr__(self) -> str:
+        """
+        Магический метод __repr__
+
+        return: Строка, показывающая, как может быть инициализирован экземпляр
+        """
         return f"{self.__class__.__name__}(id_={self.id}, name='{self.name}', pages={self.pages})"
 
 
