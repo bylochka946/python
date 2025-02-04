@@ -27,6 +27,10 @@ class PaperBook(Book):
         super().__init__(name, author)  # вызов конструктора родительского класса с помощью функции super()
         self.pages = pages
 
+    def __repr__(self):
+        return f"{self.__class__.__name__}(name={self.name!r}, author={self._author!r}, pages={self.pages!r})"
+        # перегрузка метода __repr__
+
     @property
     def pages(self) -> int:
         return self.pages
@@ -44,6 +48,10 @@ class AudioBook(Book):
     def __init__(self, name: str, author: str, duration: float):
         super().__init__(name, author)  # вызов конструктора родительского класса с помощью функции super()
         self.duration = duration
+
+    def __repr__(self):
+        return f"{self.__class__.__name__}(name={self.name!r}, author={self._author!r}, duration={self.duration!r})"
+        # перегрузка метода __repr__
 
     @property
     def duration(self) -> float:
